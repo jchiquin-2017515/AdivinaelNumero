@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+</head>
+<style>
+    button{
+            padding: .375rem .75rem;
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    color: #007bff;
+    transition: color .15s ease-in-out,
+        background-color .15s ease-in-out;
+    }
+
+    button:hover, btn:focus {
+        color: #fff;
+    background-color: #007bff;
+    }
+
+    button:active {
+        color: #fff;
+    background-color: #007bff;
+    }
+    h1{
+        color: black;
+        font-weight: normal;
+        font-size: 40px;
+        font-family: Arial;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    p{
+        color: black;
+        font-weight: normal;
+        font-size: 20px;
+        font-family: Arial;
+    }
+    label{
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        padding-right: 110px;
+        font-size: 15px;
+    }
+    body{
+        background-color: #FFC9AF;
+    }
+</style>
+<body>
+<div>
+        <h1>Adivina el número</h1>
+        <p>Debes adivinar el número en el que estoy pensando</p>
+  
+        <div class="form">
+            <label for="entrada">Ingresa el número: </label>
+            <input type = "text" id = "entrada" class = "entrada">
+            <input type = "submit" value = "Enviar" 
+                 class = "adivinar" id = "adivinar">
+        </div>
+        <br>
+        <br>
+    <button>
+        <a href="PáginaPrincipal.html">Regresar</a>
+    </button>
+</div>
+<script type = "text/javascript">
+
+    var y = Math.floor(Math.random() * 10 + 1);     
+    var x = 1;
+      
+    document.getElementById("adivinar").onclick = function(){
+           
+    var a = document.getElementById("entrada").value;
+  
+    if(a == y)
+    {    
+        alert("FELICITACIONES, HAS ENCONTRADO EL NÚMERO// "
+                + x + " INTENTOS");
+    }
+    else if(a > y) 
+    {    
+        x++;
+        alert("NÚMERO INCORRECTO, TRATA CON UN NÚMERO MÁS BAJO");
+    }
+    else
+    {
+        x++;
+        alert("NÚMERO INCORRECTO, TRATA CON UN NÚMERO MÁS ALTO")
+    }
+}
+</script>  
+</body>
+</html>
